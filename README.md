@@ -13,3 +13,10 @@ npm run start
 ```sh
 npm run build
 ```
+
+# 数据库配置
+
+```sh
+# .env
+DATABASE_URL=mongodb://username:password@localhost:port/dbName?authSource=dbName
+```
