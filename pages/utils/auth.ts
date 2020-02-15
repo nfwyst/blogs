@@ -47,6 +47,7 @@ export const signOut = (next: Function): void => {
     .then(({ data }) => {
       removeLocalStorage('user')
       next(data.message, 'success')
+      window.location.href = '/'
     })
     .catch((e: AxiosError) => {
       const { response: { data } } = e

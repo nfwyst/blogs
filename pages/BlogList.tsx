@@ -90,7 +90,7 @@ const BlogList = (): JSX.Element => {
                       href={`/blog/${blog.slug}`}
                       style={{ textDecoration: 'none' }}
                     >
-                      <Typography style={{ fontSize: 14 }} color="textSecondary" gutterBottom>
+                      <Typography variant="h5" color="textPrimary" gutterBottom>
                         {blog.title}
                       </Typography>
                     </a>
