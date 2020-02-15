@@ -1,4 +1,4 @@
-import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
+import { Module, NestModule, MiddlewareConsumer, RequestMethod, Req } from '@nestjs/common';
 import { BlogController } from './blog.controller';
 import { BlogService } from './blog.service';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -22,6 +22,8 @@ export class BlogModule implements NestModule {
     consumer.apply(RequireAdminAuth).forRoutes('/blog/category')
     consumer.apply(RequireAdminAuth).forRoutes('/blog/tags')
     consumer.apply(RequireAdminAuth).forRoutes('/blog/management-category-tag')
-    consumer.apply(RequireAuth).forRoutes('/blog')
+    consumer.apply(RequireAuth).forRoutes(
+      { path: '/blog/new', method: RequestMethod.ALL }
+    )
   }
 }
